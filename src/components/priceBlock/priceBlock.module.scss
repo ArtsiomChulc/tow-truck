@@ -1,0 +1,33 @@
+.liPrice {
+  list-style: none;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-self: center;
+  margin: 10px 0;
+
+  span {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: calc(18px + 8 * (100vw / 1440));
+    background-color: #232323;
+    flex: 0 1 25%;
+    color: #ffc326;
+  }
+
+  .descriptionPrice {
+    font-size: calc(12px + 6 * (100vw / 1440));
+    background-color: #ffc326;
+    flex: 0 1 60%;
+  }
+
+  .price {
+    font-size: calc(18px + 8 * (100vw / 1440));
+    background-color: #232323;
+    flex: 0 1 15%;
+    color: #ffc326;
+  }
+}

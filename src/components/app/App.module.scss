@@ -1,0 +1,28 @@
+.App {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  color: white;
+
+  .servicesWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .PriceBlockWrap {
+    color: black;
+    margin: 40px auto;
+    max-width: 80%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

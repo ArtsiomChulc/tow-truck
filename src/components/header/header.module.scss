@@ -1,0 +1,254 @@
+.Header {
+  background-color: #232323;
+  height: auto;
+  display: flex;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .headerInfo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .logo {
+      margin: 0 auto;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+
+      img {
+        width: 45px;
+      }
+
+      p {
+        font-size: 32px;
+        margin: 0;
+        color: #ffc326;
+      }
+    }
+
+    ul {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      li {
+        align-self: center;
+        list-style: none;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+
+        &:after, &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          display: inline-block;
+          width: 0;
+          height: 3px;
+          border-radius: 30%;
+          background-color: #ffc326;
+          transition: all .3s ease-in-out;
+        }
+
+        &:after {
+          top: 0;
+        }
+
+        &:before {
+         bottom: 0;
+        }
+
+        &:hover:before, &:hover:after {
+          width: 100%;
+        }
+
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          transition: color .3s ease-in-out;
+
+          &:hover {
+            color: #ffc326;
+          }
+        }
+      }
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      line-height: 33px;
+
+      .subTitle {
+        font-size: 14px;
+        color: #fff;
+        font-style: italic;
+        line-height: 29px;
+      }
+    }
+
+    .headerInfoListRight {
+
+      @media (max-width: 685.9px) {
+        display: none;
+      }
+    }
+
+    .headerInfoListLeft {
+
+      @media (max-width: 610.9px) {
+        display: none;
+      }
+    }
+
+
+
+
+    // burger-menu
+
+    .burgerBlock {
+      @media (min-width: 685.9px) {
+        display: none;
+      }
+
+      transform-origin: 16px 11px;
+      float: left;
+      margin-right: 29px;
+      outline: 0;
+      border: 0;
+      padding: 12px;
+      background: none;
+
+      span {
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        display: block;
+        width: 40px;
+        height: 5px;
+        margin-bottom: 7px;
+        background-color: #fff;
+      }
+      &:focus {
+        border: medium none rgb(111, 255, 176);
+        box-shadow: rgb(111, 255, 176) 0 0 2px 2px;
+        outline: 0;
+      }
+
+      &:hover {
+        span:nth-of-type(1) {
+          width: 33px;
+        }
+
+        span:nth-of-type(2) {
+          width: 40px;
+        }
+
+        span:nth-of-type(3) {
+          width: 30px;
+        }
+      }
+
+      &.active {
+        span:nth-of-type(1) {
+          transform: rotate(45deg) translate(10px, 10px);
+          width: 40px;
+        }
+
+        span:nth-of-type(2) {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        span:nth-of-type(3) {
+          transform: rotate(-45deg) translate(7px, -7px);
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+// for SubHeader component
+.subHeader {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: #ffc326;
+  color: #000;
+  font-size: calc(14px + 8 * (100vw / 1440));
+  margin-top: 110px;
+  text-align: center;
+
+  @media (max-width: 890px) {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .speedTime {
+    background-image: url("../../assets/icons/headerIcons/clock-circle-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    padding-left: 40px;
+    max-width: 35%;
+
+    @media (max-width: 890px) {
+      height: 40px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      max-width: 100%;
+      background-position: left 5px;
+    }
+  }
+
+  .phoneContact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 30%;
+    background-color: #232323;
+    text-align: center;
+    padding: 35px 30px;
+
+    @media (max-width: 890px) {
+      width: 100%;
+      padding: 20px 30px;
+    }
+
+    a {
+      color: #ffc326;
+      text-decoration: none;
+    }
+  }
+
+  .timeWork {
+    background-image: url("../../assets/icons/headerIcons/phone-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    padding-left: 40px;
+    max-width: 35%;
+
+    @media (max-width: 890px) {
+      height: 40px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      max-width: 100%;
+      background-position: left 5px;
+    }
+  }
+}
