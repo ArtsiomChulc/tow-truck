@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logoIcon from '../../assets/icons/headerIcons/logo.png'
 
 import s from './header.module.scss'
 
 const Header = () => {
+
+    const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
+
+    const onClickHandler = () => {
+        setIsOpenMenu(!isOpenMenu)
+    }
     return (
         <>
             <header className={s.Header}>
@@ -23,7 +29,11 @@ const Header = () => {
                         <li><a href="">Цены</a></li>
                         <li><a href="">Контакты</a></li>
                     </ul>
-                    <div className={s.burgerBlock} aria-label="Открыть главное меню">
+                    <div
+                        className={`${s.burgerBlock} ${isOpenMenu ? s.active : ''}`}
+                        aria-label="Открыть главное меню"
+                        onClick={onClickHandler}
+                    >
                         <span></span>
                         <span></span>
                         <span></span>
