@@ -123,12 +123,12 @@
       }
 
       transform-origin: 16px 11px;
-      float: left;
-      margin-right: 29px;
+      margin-right: 10px;
       outline: 0;
       border: 0;
       padding: 12px;
       background: none;
+      cursor: pointer;
 
       span {
         transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -136,7 +136,7 @@
         width: 40px;
         height: 5px;
         margin-bottom: 7px;
-        background-color: #fff;
+        background-color: rgba(255, 195, 38, 0.8);
       }
       &:focus {
         border: medium none rgb(111, 255, 176);
@@ -175,6 +175,12 @@
         }
       }
     }
+  }
+
+  // appBar
+
+  .appBar {
+
   }
 }
 

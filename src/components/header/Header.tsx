@@ -1,15 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import logoIcon from '../../assets/icons/headerIcons/logo.png'
 
 import s from './header.module.scss'
+import {MenuContext} from "../../common/context/navState";
 
 const Header = () => {
 
-    const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
+    const {isMenuOpen, toggleMenuMode} = useContext(MenuContext)
 
     const onClickHandler = () => {
-        setIsOpenMenu(!isOpenMenu)
+        toggleMenuMode()
     }
+
     return (
         <>
             <header className={s.Header}>
@@ -30,7 +32,7 @@ const Header = () => {
                         <li><a href="">Контакты</a></li>
                     </ul>
                     <div
-                        className={`${s.burgerBlock} ${isOpenMenu ? s.active : ''}`}
+                        className={`${s.burgerBlock} ${isMenuOpen ? s.active : ''}`}
                         aria-label="Открыть главное меню"
                         onClick={onClickHandler}
                     >
@@ -60,5 +62,18 @@ export const SubHeader = () => {
                 РАБОТАЕМ ДЛЯ ВАС <span style={{fontWeight: 'bold'}}>24/7</span>
             </div>
         </section>
+    )
+}
+
+export const Menu = () => {
+    return (
+        <div>
+            <ul className={s.appBar}>
+                <li><a href="">Главная</a></li>
+                <li><a href="">Наши услуги</a></li>
+                <li><a href="">Цены</a></li>
+                <li><a href="">Контакты</a></li>
+            </ul>
+        </div>
     )
 }
