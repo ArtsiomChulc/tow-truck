@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './App.module.scss';
 import Header from "../header/Header";
 import CarouselBlock from "../carousel/CarouselBlock";
@@ -10,6 +10,8 @@ import SubFooter from "../subFooter/SubFooter";
 
 function App() {
 
+    const [isMenuOpen, toggleMenuMode] = useState(false)
+
     const apiKey = 'c39a3fbf0f043f86edd27f336fe90be3';
 
     const servicesMap = DB.map(el => {
@@ -20,21 +22,17 @@ function App() {
 
     return (
         <div className={s.App}>
-                <Header/>
+                <Header isMenuOpen={isMenuOpen} toggleMenuMode={toggleMenuMode}/>
 
-            <CarouselBlock/>
+            {!isMenuOpen && <><CarouselBlock/>
+                <div className={s.servicesWrap}>
+                    {servicesMap}
+                </div>
+                <div className={s.PriceBlockWrap}>
+                    <PriceBlock/>
+                </div>
+                <Footer apiKey={apiKey}/><SubFooter/></>}
 
-            <div className={s.servicesWrap}>
-                {servicesMap}
-            </div>
-
-            <div className={s.PriceBlockWrap}>
-                <PriceBlock/>
-            </div>
-
-            <Footer apiKey={apiKey}/>
-
-            <SubFooter/>
 
         </div>
     );

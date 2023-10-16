@@ -3,9 +3,15 @@ import logoIcon from '../../assets/icons/headerIcons/logo.png'
 
 import s from './header.module.scss'
 
-const Header = () => {
+type HeaderPropsType = {
+    isMenuOpen: boolean
+    toggleMenuMode: (x: boolean) => void
+}
 
-    const [isMenuOpen, toggleMenuMode] = useState(false)
+const Header = (props: HeaderPropsType) => {
+
+    const {isMenuOpen, toggleMenuMode} = props
+
     const menuRef = useRef<HTMLDivElement>(null);
 
     const onClickHandler = () => {
