@@ -1,15 +1,16 @@
-import React, {useContext} from 'react';
+import React, {useState} from 'react';
 import logoIcon from '../../assets/icons/headerIcons/logo.png'
 
 import s from './header.module.scss'
-import {MenuContext} from "../../common/context/navState";
 
 const Header = () => {
 
-    const {isMenuOpen, toggleMenuMode} = useContext(MenuContext)
+    // const {isMenuOpen, toggleMenuMode} = useContext(MenuContext)
+
+    const [isMenuOpen, toggleMenuMode] = useState(false)
 
     const onClickHandler = () => {
-        toggleMenuMode()
+        toggleMenuMode(!isMenuOpen)
     }
 
     return (
@@ -41,6 +42,7 @@ const Header = () => {
                         <span></span>
                     </div>
                 </div>
+                <Menu isMenuOpen={isMenuOpen}/>
             </header>
             <SubHeader/>
         </>
@@ -65,10 +67,14 @@ export const SubHeader = () => {
     )
 }
 
-export const Menu = () => {
+type MenuPropsType = {
+    isMenuOpen: boolean;
+}
+
+export const Menu = (props: MenuPropsType) => {
     return (
         <div>
-            <ul className={s.appBar}>
+            <ul className={`${s.appBar} ${props.isMenuOpen ? s.visible : ''}`}>
                 <li><a href="">Главная</a></li>
                 <li><a href="">Наши услуги</a></li>
                 <li><a href="">Цены</a></li>

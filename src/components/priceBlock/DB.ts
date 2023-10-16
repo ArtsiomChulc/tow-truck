@@ -36,6 +36,6 @@ export const DBPrice: DBPriceType[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, consequuntur earum et eum explicabo fugit,\n' +
             '                incidunt laudantium libero minus necessitatibus officia quos reiciendis sapiente similique sit vel\n' +
             '                vitae. Similique, suscipit.',
-        price: 'Договорная'
+        price: 'Дог-ная'
     }
 ]

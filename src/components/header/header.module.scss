@@ -15,6 +15,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    position: relative;
 
     .logo {
       margin: 0 auto;
@@ -27,7 +28,7 @@
       }
 
       p {
-        font-size: 32px;
+        font-size: calc(20px + 12 * (100vw / 800));
         margin: 0;
         color: #ffc326;
       }
@@ -91,7 +92,7 @@
       line-height: 33px;
 
       .subTitle {
-        font-size: 14px;
+        font-size: calc(10px + 6 * (100vw / 800));
         color: #fff;
         font-style: italic;
         line-height: 29px;
@@ -107,7 +108,7 @@
 
     .headerInfoListLeft {
 
-      @media (max-width: 610.9px) {
+      @media (max-width: 685.9px) {
         display: none;
       }
     }
@@ -123,10 +124,10 @@
       }
 
       transform-origin: 16px 11px;
-      margin-right: 10px;
+      //margin-right: 10px;
       outline: 0;
       border: 0;
-      padding: 12px;
+      padding: 12px 0;
       background: none;
       cursor: pointer;
 
@@ -177,10 +178,39 @@
     }
   }
 
-  // appBar
+  // appBar (menu-nav)
 
   .appBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffc326;
+    padding: 20px 30px;
+    height: 100vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    transform: translateX(-100%);
+    transition: all .3s ease-in-out;
 
+    li>a {
+      color: black;
+      font-size: calc(16px + 6 * (100vw / 800));
+      font-weight: bold;
+    }
+
+    li {
+      transition: all .3s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &.visible {
+      transform: translateX(0);
+    }
   }
 }
 

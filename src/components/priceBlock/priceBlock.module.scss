@@ -3,7 +3,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  justify-self: center;
+  justify-content: center;
   margin: 10px 0;
 
   span {
@@ -12,22 +12,23 @@
   }
 
   .title {
-    font-size: calc(18px + 8 * (100vw / 1440));
+    font-size: calc(16px + 8 * (100vw / 1440));
     background-color: #232323;
-    flex: 0 1 25%;
+    flex: 1 0 25%;
     color: #ffc326;
+    writing-mode: vertical-rl;
   }
 
   .descriptionPrice {
     font-size: calc(12px + 6 * (100vw / 1440));
     background-color: #ffc326;
-    flex: 0 1 60%;
+    flex: 0 1 auto;
   }
 
   .price {
-    font-size: calc(18px + 8 * (100vw / 1440));
+    font-size: calc(16px + 8 * (100vw / 1440));
     background-color: #232323;
-    flex: 0 1 15%;
+    flex: 1 0 15%;
     color: #ffc326;
   }
 }

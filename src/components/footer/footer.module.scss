@@ -14,8 +14,9 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    max-width: 350px;
-    padding-bottom: 20px;
+    flex: 1 0 25%;
+    padding: 40px 30px;
+    border-bottom: 1px dashed rgba(120, 120, 120, 0.46);
 
     a {
       padding: 5px 10px;
