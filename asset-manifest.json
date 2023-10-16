@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/tow-truck/static/css/main.d9164808.css",
+    "main.js": "/tow-truck/static/js/main.4b642fd2.js",
+    "static/js/787.28cb0dcd.chunk.js": "/tow-truck/static/js/787.28cb0dcd.chunk.js",
+    "static/media/imgTime.png": "/tow-truck/static/media/imgTime.9b7e2ffc802c12d491e2.png",
+    "static/media/img2.png": "/tow-truck/static/media/img2.6763760421dd5f812974.png",
+    "static/media/img3.png": "/tow-truck/static/media/img3.c92774eac3bce8d982fb.png",
+    "static/media/img1.png": "/tow-truck/static/media/img1.e174346cdd410081b847.png",
+    "static/media/img4.png": "/tow-truck/static/media/img4.f018918e89c3c80b72f2.png",
+    "static/media/ig_instagram_icon.svg": "/tow-truck/static/media/ig_instagram_icon.ff0d2e5b78a841746025447f6b4d0b33.svg",
+    "static/media/viber_color_icon.svg": "/tow-truck/static/media/viber_color_icon.ad7e7ebabd019fd98c85d99b10357b16.svg",
+    "static/media/icon3.svg": "/tow-truck/static/media/icon3.52796808efc0bd39087e1da9cd2c4eb3.svg",
+    "static/media/icon1.svg": "/tow-truck/static/media/icon1.9ec27be41fb1ea92a6d232a4d0d97f4f.svg",
+    "static/media/icon4.svg": "/tow-truck/static/media/icon4.092be7954190ab8964fefa1d0e3eaa33.svg",
+    "static/media/telegram_icon.svg": "/tow-truck/static/media/telegram_icon.940c9ef62751e1347c6317bf8e461080.svg",
+    "static/media/whatsapp_color_icon.svg": "/tow-truck/static/media/whatsapp_color_icon.f77065945068199da755d989097e3930.svg",
+    "static/media/clock-circle-svgrepo-com.svg": "/tow-truck/static/media/clock-circle-svgrepo-com.78801b9c0d486198a535.svg",
+    "static/media/vk_icon.svg": "/tow-truck/static/media/vk_icon.24395c85441e163ddc35109de716da3c.svg",
+    "static/media/phone-svgrepo-com.svg": "/tow-truck/static/media/phone-svgrepo-com.87f614b5c18260ed6d51.svg",
+    "static/media/arrow.svg": "/tow-truck/static/media/arrow.f9b4a564db678617e2a2.svg",
+    "index.html": "/tow-truck/index.html",
+    "main.d9164808.css.map": "/tow-truck/static/css/main.d9164808.css.map",
+    "main.4b642fd2.js.map": "/tow-truck/static/js/main.4b642fd2.js.map",
+    "787.28cb0dcd.chunk.js.map": "/tow-truck/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9164808.css",
+    "static/js/main.4b642fd2.js"
+  ]
+}
