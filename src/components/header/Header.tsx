@@ -1,17 +1,29 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import logoIcon from '../../assets/icons/headerIcons/logo.png'
 
 import s from './header.module.scss'
 
 const Header = () => {
 
-    // const {isMenuOpen, toggleMenuMode} = useContext(MenuContext)
-
     const [isMenuOpen, toggleMenuMode] = useState(false)
+    const menuRef = useRef<HTMLDivElement>(null);
 
     const onClickHandler = () => {
         toggleMenuMode(!isMenuOpen)
     }
+
+    const handleOutsideClick = (event: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            toggleMenuMode(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleOutsideClick);
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+        };
+    }, []);
 
     return (
         <>
@@ -33,6 +45,7 @@ const Header = () => {
                         <li><a href="">Контакты</a></li>
                     </ul>
                     <div
+                        ref={menuRef}
                         className={`${s.burgerBlock} ${isMenuOpen ? s.active : ''}`}
                         aria-label="Открыть главное меню"
                         onClick={onClickHandler}

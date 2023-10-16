@@ -6,9 +6,7 @@ import Services from "../services/Services";
 import {DB} from "../services/DB";
 import PriceBlock from "../priceBlock/PriceBlock";
 import Footer from "../footer/Footer";
-import Loader from "../../common/loader/Loader";
 import SubFooter from "../subFooter/SubFooter";
-import {MenuContext} from "../../common/context/navState";
 
 function App() {
 
@@ -22,9 +20,7 @@ function App() {
 
     return (
         <div className={s.App}>
-            <MenuContext.Provider value={{isMenuOpen: false, toggleMenuMode: () => {}}}>
                 <Header/>
-            </MenuContext.Provider>
 
             <CarouselBlock/>
 
