@@ -8,6 +8,7 @@ import Loader from "../loader/Loader";
 type WeatherWidgetProps = {
     apiKey: string;
     city?: string;
+    callBack: (town: string | undefined) => void
 }
 
 type WeatherDataType = {
@@ -59,20 +60,28 @@ type WeatherDataType = {
     cod?: number
 }
 
-const WeatherWidget: React.FC<WeatherWidgetProps> = ({apiKey}) => {
+const WeatherWidget: React.FC<WeatherWidgetProps> = ({apiKey, callBack}) => {
+
     const [weatherTemp, setWeatherTemp] = useState<number>(0);
     const [windSpeed, setWindSpeed] = useState<number | undefined>(0);
     const [weatherDesc, setWeatherDesc] = useState<string | undefined>('');
     const [weatherIcon, setWeatherIcon] = useState<string>('');
 
+    const callBack1 = (town: string | undefined) => {
+        callBack(town)
+    }
+
     useEffect(() => {
+
         const fetchWeatherData = async () => {
             try {
                 const response = await fetch(
-                    `https://api.openweathermap.org/data/2.5/weather?lat=52.8923&lon=30.0378&lang=ru&appid=${apiKey}&units=metric`
+                    // `https://api.openweathermap.org/data/2.5/weather?lat=52.8923&lon=30.0378&lang=ru&appid=${apiKey}&units=metric` // Жлобин
+                    `https://api.openweathermap.org/data/2.5/weather?lat=54,5081&lon=30,4172&lang=ru&appid=${apiKey}&units=metric` // Орша
                 );
                 const data: WeatherDataType = await response.json();
 
+                const townWeather = data.name;
                 const temp = data.main?.temp;
                 const wind = data.wind?.speed
                 const desc = data.weather?.map(el => el.description);
@@ -87,8 +96,11 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({apiKey}) => {
                 }
                 // @ts-ignore
                 setWeatherDesc(desc)
+
                 // @ts-ignore
                 setWeatherIcon(icon)
+
+                callBack1(townWeather)
 
             } catch (error) {
                 console.error('Error fetching weather data:', error);

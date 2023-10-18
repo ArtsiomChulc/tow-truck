@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {RefObject, useEffect, useRef, useState} from 'react';
 import logoIcon from '../../assets/icons/headerIcons/logo.png'
 
 import s from './header.module.scss'
@@ -44,7 +44,8 @@ const Header = (props: HeaderPropsType) => {
                     <img src={logoIcon} alt="logo"/>
                     <p className={s.title}>
                         Эвакуатор
-                        <span className={s.subTitle}>эвакуация авто - Жлобин</span>
+                        {/*<span className={s.subTitle}>эвакуация авто - Жлобин</span>*/}
+                        <span className={s.subTitle}>эвакуация авто - Город</span>
                     </p>
                     </span>
                     <ul className={s.headerInfoListRight}>
@@ -78,7 +79,8 @@ export const SubHeader = () => {
                 ПРИБЫТИЕ ЗА <span style={{fontWeight: 'bold'}}>45 МИНУТ</span>
             </div>
             <div className={s.phoneContact}>
-                <a href="tel:+375256444333">+375256444333</a>
+                {/*<a href="tel:+375256444333">+375256444333</a>*/}
+                <a href="">номер телефона</a>
             </div>
             <div className={s.timeWork}>
                 РАБОТАЕМ ДЛЯ ВАС <span style={{fontWeight: 'bold'}}>24/7</span>
