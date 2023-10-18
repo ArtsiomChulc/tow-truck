@@ -38,7 +38,7 @@ const Header = (props: HeaderPropsType) => {
                 <div className={s.headerInfo}>
                     <ul className={s.headerInfoListLeft}>
                         <li><Link to={'main'} smooth={true} duration={500}>Главная</Link></li>
-                        <li><Link to={'ourServices'} smooth={true} duration={500}>Наши услуги</Link></li>
+                        <li><Link to={'ourServices'} smooth={true} duration={500} offset={-170}>Наши услуги</Link></li>
                     </ul>
                     <span className={s.logo}>
                     <img src={logoIcon} alt="logo"/>
@@ -98,8 +98,8 @@ export const Menu = (props: MenuPropsType) => {
         <div>
             <ul className={`${s.appBar} ${props.isMenuOpen ? s.visible : ''}`}>
                 <li><Link to={'main'} smooth={true} duration={500}>Главная</Link></li>
-                <li><Link to={'ourServices'} smooth={true} duration={500}>Наши услуги</Link></li>
-                <li><Link to={'price'} smooth={true} duration={500}>Цены</Link></li>
+                <li><Link to={'ourServices'} smooth={true} duration={500} offset={-120}>Наши услуги</Link></li>
+                <li><Link to={'price'} smooth={true} duration={500} offset={-120}>Цены</Link></li>
                 <li><Link to={'contacts'} smooth={true} duration={500}>Контакты</Link></li>
             </ul>
         </div>
