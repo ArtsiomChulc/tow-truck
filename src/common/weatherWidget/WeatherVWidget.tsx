@@ -19,7 +19,7 @@ type WeatherDataType = {
         {
             id?: number
             main?: string
-            description: string
+            description: string | undefined
             icon?: string
         }
     ],
@@ -36,7 +36,7 @@ type WeatherDataType = {
     },
     visibility?: number
     wind?: {
-        speed?: number
+        speed: number | undefined
         deg?: number
         gust?: number
     },
@@ -61,7 +61,8 @@ type WeatherDataType = {
 
 const WeatherWidget: React.FC<WeatherWidgetProps> = ({apiKey}) => {
     const [weatherTemp, setWeatherTemp] = useState<number>(0);
-    const [weatherDesc, setWeatherDesc] = useState<string>('');
+    const [windSpeed, setWindSpeed] = useState<number | undefined>(0);
+    const [weatherDesc, setWeatherDesc] = useState<string | undefined>('');
     const [weatherIcon, setWeatherIcon] = useState<string>('');
 
     useEffect(() => {
@@ -73,11 +74,17 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({apiKey}) => {
                 const data: WeatherDataType = await response.json();
 
                 const temp = data.main?.temp;
+                const wind = data.wind?.speed
                 const desc = data.weather?.map(el => el.description);
                 const icon = data.weather?.map(el => el.main)
 
-                // @ts-ignore
-                setWeatherTemp(Math.round(temp));
+
+                if (temp != null) {
+                    setWeatherTemp(Math.round(temp));
+                }
+                if (typeof wind === "number") {
+                    setWindSpeed(Math.round(wind) / 1000 * 3600)
+                }
                 // @ts-ignore
                 setWeatherDesc(desc)
                 // @ts-ignore
@@ -109,6 +116,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({apiKey}) => {
 
             <p>Температура: {weatherTemp} °C</p>
             <p>Описание: {weatherDesc}</p>
+            <p>Ветер: {windSpeed} км/ч</p>
         </div>
     );
 };

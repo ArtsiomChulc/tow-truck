@@ -24,11 +24,11 @@ const Footer: React.FC<PropsType> = ({apiKey}) => {
             <div className={s.footerCard}>
                 <h5 className={s.title}>Мы в социальных сетях</h5>
                 <ul className={s.socialBlock}>
-                    <li><a href=""><img src={viberIcon} alt="viberIcon"/></a></li>
-                    <li><a href=""><img src={whatsAppIcon} alt="whatsAppIcon"/></a></li>
-                    <li><a href=""><img src={instagramIcon} alt="instagramIcon"/></a></li>
-                    <li><a href=""><img src={vkIcon} alt="vkIcon"/></a></li>
-                    <li><a href=""><img src={telegramIcon} alt="telegramIcon"/></a></li>
+                    <li><a target={'_blank'} href="viber://chat?number=%2B375296924577"><img src={viberIcon} alt="viberIcon"/></a></li>
+                    <li><a target={'_blank'} href="https://wa.me/+375296924577"><img src={whatsAppIcon} alt="whatsAppIcon"/></a></li>
+                    <li><a target={'_blank'} href="https://www.instagram.com/evakuatorzhlobin/"><img src={instagramIcon} alt="instagramIcon"/></a></li>
+                    <li><a target={'_blank'} href="https://vk.com/evakuatorzhlobin375256444333"><img src={vkIcon} alt="vkIcon"/></a></li>
+                    <li><a target={'_blank'} href="https://t.me/Pavel_kuzniatou"><img src={telegramIcon} alt="telegramIcon"/></a></li>
                 </ul>
             </div>
             <div className={s.footerCard}>
