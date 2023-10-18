@@ -5,6 +5,10 @@
   margin: 0 auto;
   color: white;
 
+  &.overflow {
+    //pointer-events: none;
+  }
+
   .servicesWrap {
     display: flex;
     flex-wrap: wrap;

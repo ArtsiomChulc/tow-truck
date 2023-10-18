@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import logoIcon from '../../assets/icons/headerIcons/logo.png'
 
 import s from './header.module.scss'
+import {Link, animateScroll as scroll} from "react-scroll";
 
 type HeaderPropsType = {
     isMenuOpen: boolean
@@ -36,8 +37,8 @@ const Header = (props: HeaderPropsType) => {
             <header className={s.Header}>
                 <div className={s.headerInfo}>
                     <ul className={s.headerInfoListLeft}>
-                        <li><a href="">Главная</a></li>
-                        <li><a href="">Наши услуги</a></li>
+                        <li><Link to={'main'} smooth={true} duration={500}>Главная</Link></li>
+                        <li><Link to={'ourServices'} smooth={true} duration={500}>Наши услуги</Link></li>
                     </ul>
                     <span className={s.logo}>
                     <img src={logoIcon} alt="logo"/>
@@ -47,8 +48,8 @@ const Header = (props: HeaderPropsType) => {
                     </p>
                     </span>
                     <ul className={s.headerInfoListRight}>
-                        <li><a href="">Цены</a></li>
-                        <li><a href="">Контакты</a></li>
+                        <li><Link to={'price'} smooth={true} duration={500}>Цены</Link></li>
+                        <li><Link to={'contacts'} smooth={true} duration={500}>Контакты</Link></li>
                     </ul>
                     <div
                         ref={menuRef}
@@ -94,10 +95,10 @@ export const Menu = (props: MenuPropsType) => {
     return (
         <div>
             <ul className={`${s.appBar} ${props.isMenuOpen ? s.visible : ''}`}>
-                <li><a href="">Главная</a></li>
-                <li><a href="">Наши услуги</a></li>
-                <li><a href="">Цены</a></li>
-                <li><a href="">Контакты</a></li>
+                <li><Link to={'main'} smooth={true} duration={500}>Главная</Link></li>
+                <li><Link to={'ourServices'} smooth={true} duration={500}>Наши услуги</Link></li>
+                <li><Link to={'price'} smooth={true} duration={500}>Цены</Link></li>
+                <li><Link to={'contacts'} smooth={true} duration={500}>Контакты</Link></li>
             </ul>
         </div>
     )

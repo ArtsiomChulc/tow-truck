@@ -21,17 +21,31 @@ function App() {
     })
 
     return (
-        <div className={s.App}>
-                <Header isMenuOpen={isMenuOpen} toggleMenuMode={toggleMenuMode}/>
+        <div id={'main'} className={`${s.App} ${isMenuOpen ? s.overflow : ''}`}>
+            <Header isMenuOpen={isMenuOpen} toggleMenuMode={toggleMenuMode}/>
 
-            {!isMenuOpen && <><CarouselBlock/>
-                <div className={s.servicesWrap}>
-                    {servicesMap}
-                </div>
-                <div className={s.PriceBlockWrap}>
-                    <PriceBlock/>
-                </div>
-                <Footer apiKey={apiKey}/><SubFooter/></>}
+            {/*{!isMenuOpen && <><CarouselBlock/>*/}
+            {/*    <div className={s.servicesWrap}>*/}
+            {/*        {servicesMap}*/}
+            {/*    </div>*/}
+            {/*    <div className={s.PriceBlockWrap}>*/}
+            {/*        <PriceBlock/>*/}
+            {/*    </div>*/}
+            {/*    <div style={{width: '100%'}}>*/}
+            {/*        <Footer apiKey={apiKey}/><SubFooter/>*/}
+            {/*    </div>*/}
+            {/*</>}*/}
+
+            <CarouselBlock/>
+            <div id={'ourServices'} className={s.servicesWrap}>
+                {servicesMap}
+            </div>
+            <div id={'price'} className={s.PriceBlockWrap}>
+                <PriceBlock/>
+            </div>
+            <div id={'contacts'} style={{width: '100%'}}>
+                <Footer apiKey={apiKey}/><SubFooter/>
+            </div>
 
 
         </div>
